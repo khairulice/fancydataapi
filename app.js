@@ -9,10 +9,10 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-// var mongoClient = require("mongodb").MongoClient;
-// mongoClient.connect("mongodb://khairulmogno:EEHOelrl1UodqYngrDUUtUSKjsKYBzcdPm77ehrCkUNyUiLudflAUOcNk68CBehd3OPLE6MzrvK74vQq1Y0O2g%3D%3D@khairulmogno.documents.azure.com:10255/vehicle?ssl=true&sslverifycertificate=false", function (err, db) {
-//   db.close();
-// });
+var mongoClient = require("mongodb").MongoClient;
+mongoClient.connect("mongodb://khairulmogno:EEHOelrl1UodqYngrDUUtUSKjsKYBzcdPm77ehrCkUNyUiLudflAUOcNk68CBehd3OPLE6MzrvK74vQq1Y0O2g%3D%3D@khairulmogno.documents.azure.com:10255/vehicle?ssl=true&sslverifycertificate=false", function (err, db) {
+  db.close();
+});
 
 
 // var mongoose = require('mongoose');
