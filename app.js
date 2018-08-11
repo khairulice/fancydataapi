@@ -9,6 +9,14 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+
+var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
+mongoose.connect('https://khairulmogno.documents.azure.com:443/vehicle', { promiseLibrary: require('bluebird') })
+  .then(() => console.log('connection succesful'))
+  .catch((err) => console.error(err));
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
