@@ -16,8 +16,8 @@ var app = express();
 
 
 var mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://khairulmogno:EEHOelrl1UodqYngrDUUtUSKjsKYBzcdPm77ehrCkUNyUiLudflAUOcNk68CBehd3OPLE6MzrvK74vQq1Y0O2g==@khairulmogno.documents.azure.com:10255/vehicle?ssl=true', { promiseLibrary: require('bluebird') })
+//mongoose.Promise = require('bluebird');
+mongoose.connect('mongodb://khairulmogno:EEHOelrl1UodqYngrDUUtUSKjsKYBzcdPm77ehrCkUNyUiLudflAUOcNk68CBehd3OPLE6MzrvK74vQq1Y0O2g%3D%3D@khairulmogno.documents.azure.com:10255/vehicle?ssl=true&sslverifycertificate=false')
   .then(() => console.log('connection succesful'))
   .catch((err) => console.error(err));
 
