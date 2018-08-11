@@ -1,26 +1,8 @@
 var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var bodyParser = require('body-parser');
-const cors = require('cors');
 
-var userRoutes = require('./router/user.router');
+var userRoutes = require('./user.router');
 var app = express();
-
-var mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost:27017/vehicle', { promiseLibrary: require('bluebird') })
-  .then(() => console.log('connection succesful'))
-  .catch((err) => console.error(err));
-
-app.use(cors());
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ 'extended': 'false' }));
-app.use(express.static(path.join(__dirname, 'dist')));
-app.use('/users', express.static(path.join(__dirname, 'dist')));
-app.use('/user', userRoutes);
+app.use('/api/user', userRoutes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
